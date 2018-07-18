@@ -1,0 +1,54 @@
+<div class="body-content">
+  <div class="container-fluid main-content">
+    <h2 class="h2">会員編集ページ</h2>
+    <div class="user-info">
+      <h3 class="h3">会員情報</h3>
+
+      <%= form_for(@user) do |f| %>
+      <table class="table">
+    	<tbody>
+    	<div class="field">
+  		<tr>
+    		<td><%= f.label :name, "名前" %></td>
+  		</tr>
+  		<tr>
+    		<td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "regist-box" %></td>
+  		</tr>
+    	</div>
+    	<div class="field">
+  		<tr>
+    		<td><%= f.label :age, "年齢" %></td>
+  		</tr>
+  		<tr>
+    		<td><%= f.number_field :age, autofocus: true, autocomplete: "age", class: "regist-box" %></td>
+  		</tr>
+    	</div>
+    	<div class="field">
+  		<tr>
+    		<td><%= f.label :sex, "性別" %></td>
+  		</tr>
+  		<tr>
+    	<td>
+      		<label><%= f.radio_button :sex, :man %> 男性 </label>
+      		<label><%= f.radio_button :sex, :woman %> 女性</label>
+    	</td>
+  		</tr>
+      </div>
+      <div class="field">
+      <tr>
+          <td><%= f.label :email, "メールアドレス" %></td>
+      </tr>
+      <tr>
+          <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "regist-box" %></td>
+      </tr>
+      </div>
+      </tbody>
+    </table>
+      <div class="actions user-update">
+        <%= f.submit "更 新", class:"btn btn-info btn-lg " %>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

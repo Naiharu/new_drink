@@ -1,0 +1,53 @@
+
+<div class="item-search">
+  <%= form_tag items_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "商品名検索", :title => nil %>
+        </p>
+      <% end %>
+</div><!-- 検索フォーム -->
+
+<div class="body-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="main-content">
+        <h2 class="h2">商品一覧</h2><br>
+        <div class="main-box2 clearfix">
+          <div class="flex">
+            <% @items.each do |item| %>
+                <div class="item-box-index">
+                 <%= link_to (item_path(item.id)) do %>
+                  <%= attachment_image_tag item, :item_image, :fill, 208, 208, fallback: "noimage.png", size: '208x208' %>
+                  <% end %>
+                  <div class="nakami-box">
+                  <table>
+                    <tbody class="nakami">
+                      <tr>
+                        <td><b>『<%=item.title%>』</b></td>
+                      </tr>
+                      <tr>
+                        <td><%= item.maker.maker_name%></td>
+                      </tr>
+                      <tr>
+                        <td><%= item.age %>日発売</td>
+                      </tr>
+                      <% if admin_signed_in? %>
+                      <tr>
+                        <td><%= link_to "編集",edit_item_path(item), class:"btn btn-default btn-xs"%></td>
+                      </tr>
+                      <% end %>
+                       <td><span id="iine-of-<%= item.id %>">
+                           <%= render partial: 'iines/iine', locals: { item: item, iines: @iines } %>
+                           </span></td>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+             <% end %><!-- each挿入箇所 おわり-->
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="body-content">
+  <div class="body-box">
+  <div class="container-fluid">
+    <div class="row">
+    <h2 class="h2">カテゴリの追加</h2>
+      <div class="main-top">
+      <%= form_for(@category) do |f| %>
+      <table class="table">
+        <tbody>
+              <div class="field">
+                <tr>
+                  <td><%= f.label :category_name, "カテゴリ名" %></td>
+                  <td><%= f.text_field :category_name,class:"form-control" %></td>
+                </tr>
+              </div>
+        </tbody>
+      </table>
+            <div class="new-main">
+              <div class="actions new-sub">
+                <%= f.submit ' 更 新 ', class:"btn btn-info btn-lg" %>
+              </div>
+            </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

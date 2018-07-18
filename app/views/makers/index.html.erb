@@ -1,0 +1,40 @@
+<div class="body-content">
+  <div class="container-fluid">
+    <div class="row">
+       <h2 class="h2">メーカーの追加</h2>
+      <div class="new-main-top">
+        <%= form_for(@maker) do |f| %>
+        <table class="table">
+          <tbody>
+              <tr>
+                <div class="field">
+                  <td><label for="new_name">メーカー名</label></td>
+                  <td><%= f.text_field :maker_name, class:"form-control" %></td>
+                </div>
+                <div class="actions">
+                  <td><%= f.submit "　作 成　", class:"btn btn-info btn-xs" %></td>
+                </div>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <h2 class="h2">メーカーの編集</h2>
+      <!-- すべてのジャンル名を一覧表示↓ -->
+
+      <div class="new-main-bottom">
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <% @makers.each do |maker| %>
+              <tr>
+                <td class="new-center"><%= maker.maker_name %></td>
+                <td class="new-center"><%= link_to "　編 集　", edit_maker_path(maker), class:"btn btn-default btn-xs" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,79 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item-box-index{
+	float:left;
+	padding-top: 20px;
+}
+.nakami-box{
+	width:250px;
+}
+.star-rating {
+	position: relative;
+	width: 5em;
+	font-size: 35px;
+}
+  .star-rating-front {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	color: yellow;
+  }
+  .star-rating-back {
+	color: #ccc;
+  }
+ .item-box-show{
+ 	font-size:30px;
+ }
+ .item-review-box{
+ 	font-size:20px;
+ 	padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+
+ }
+ .border{
+ border-bottom: solid 2px #87CEFA;
+ }
+ .item-top-new{
+ font-size: 20px;
+ padding: 0.5em 1em;
+ margin: 2em 0;
+ border: double 5px #4ec4d3;
+ }
+ .top-text{
+ font-size:30px;
+ color:orange;
+ }
+ .iine{
+ color:#9999FF
+ }
+ .star-rating-top {
+	position: relative;
+	width: 5em;
+	font-size: 45px;
+}
+  .star-rating-front-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	color: blue;
+  }
+  .review-index{
+ font-size: 20px;
+  }
+   .star-rating-show {
+	position: relative;
+	width: 5em;
+	font-size: 20px;
+}
+  .star-rating-front-show {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	color: blue;
+  }

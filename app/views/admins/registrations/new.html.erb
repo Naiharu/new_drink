@@ -1,0 +1,58 @@
+<div class="error"><%= devise_error_messages! %></div>
+<div class="body-content">
+  <div class="body-box">
+    <h2 class="h2-box">管理者登録ページ</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <table class="table">
+    <tbody>
+    <div class="field">
+  <tr>
+    <td><%= f.label :name, "名前" %></td>
+  </tr>
+  <tr>
+    <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "regist-box" %></td>
+  </tr>
+    </div>
+  </tr>
+    <div class="field">
+      <tr>
+      <td><%= f.label :email, "メールアドレス" %></td>
+    </tr>
+    <tr>
+      <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "regist-box" %></td>
+    </tr>
+    <div class="field">
+  <tr>
+    <td><%= f.label :password, "パスワード" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %>文字以上)</em>
+      <% end %></td>
+  </tr>
+  <tr>
+    <td><%= f.password_field :password, autocomplete: "password", class: "regist-box" %></td>
+  </tr>
+    </div>
+  </tr>
+  <tr>
+    <div class="field">
+  <tr>
+    <td><%= f.label :password_confirmation, "パスワード再確認" %></td>
+  </tr>
+  <tr>
+    <td><%= f.password_field :password_confirmation, autocomplete: "off", class: "regist-box" %></td>
+  </tr>
+    </div>
+  </tr>
+  </tbody>
+</table>
+  <div class="login-box">
+    <div class="actions">
+      <%= f.submit "登録する"%>
+    </div>
+  </div>
+<% end %>
+
+  </div>
+</div>
+
+<%= render "admins/shared/links" %>

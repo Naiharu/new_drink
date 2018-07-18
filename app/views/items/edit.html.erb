@@ -1,0 +1,49 @@
+<div class="body-content">
+  <div class="container-fluid main-content">
+    <h2 class="h2">商品の編集</h2>
+    <div class="row">
+    	<%= form_for(@item) do |f| %>
+           	<%= f.hidden_field :admin_id, :value => @admin %>
+
+			<div class="item-form-box">
+
+			<div class="field">
+				<%= f.label :item_image_id, "イメージ" %>
+				<%= f.attachment_field :item_image, placeholder: "画像のアップロード" %>
+			</div>
+			<div class="field">
+			<%= f.label :title, "商品名" %>
+			<%= f.text_field :title, class: "item-form" %>
+			</div>
+			<div class="field">
+			<%= f.label :age, "発売日" %>
+			<%= f.text_field :age, class: "item-form" %>
+			</div>
+			<div class="field">
+			<%= f.label :maker_id, "メーカー" %>
+			<%= f.collection_select(:maker_id, Maker.all, :id, :maker_name) %>
+			</div>
+			<div class="field">
+			<%= f.label :category_id, "カテゴリ" %>
+			<%= f.collection_select(:category_id, Category.all, :id, :category_name) %>
+			</div>
+			<div class="field">
+			<%= f.label :price, "参考価格" %>
+			<%= f.number_field :price, class: "item-form" %>
+			</div>
+			<div class="field">
+			<%= f.label :calorie, "カロリー" %>
+			<%= f.number_field :calorie, class: "item-form" %>
+			</div>
+			<div class="field">
+			<%= f.label :comment, "商品説明" %>
+			<%= f.text_area :comment, class: "item-form" %>
+			</div>
+ 			<div class="button-area item-button">
+          	<%= f.submit "　完 了　", class: "btn btn-lg btn-info" %>
+ 			</div>
+			</div>
+		<% end %>
+	</div>
+  </div>
+</div>

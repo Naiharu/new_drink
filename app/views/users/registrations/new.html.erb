@@ -1,0 +1,79 @@
+<div class="error"><%= devise_error_messages! %></div>
+<div class="body-content">
+  <div class="body-box">
+  <h2 class="h2-box">新規会員登録</h2>
+      <p>会員登録を行います。</p>
+      <p>下記のフォームに必要事項を入力し、登録ボタンをクリックしてください。</p>
+    </div>
+  </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <table class="table">
+    <tbody>
+    <div class="field">
+  <tr>
+    <td><%= f.label :name, "名前" %></td>
+  </tr>
+  <tr>
+    <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "regist-box" %></td>
+  </tr>
+    </div>
+  </tr>
+    <div class="field">
+      <tr>
+      <td><%= f.label :email, "メールアドレス" %></td>
+    </tr>
+    <tr>
+      <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "regist-box" %></td>
+    </tr>
+  <tr>
+    <td><%= f.label :age, "年齢" %></td>
+  </tr>
+  <tr>
+    <td><%= f.number_field :age, autofocus: true, autocomplete: "age", class: "regist-box" %></td>
+  </tr>
+    </div>
+    <div class="field">
+  <tr>
+    <td><%= f.label :sex, "性別" %></td>
+  </tr>
+  <tr>
+    <td>
+      <label><%= f.radio_button :sex, :man %> 男性 </label>
+      <label><%= f.radio_button :sex, :woman %> 女性</label>
+    </td>
+  </tr>
+    <div class="field">
+  <tr>
+    <td><%= f.label :password, "パスワード" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %>文字以上)</em>
+      <% end %></td>
+  </tr>
+  <tr>
+    <td><%= f.password_field :password, autocomplete: "password", class: "regist-box" %></td>
+  </tr>
+    </div>
+  </tr>
+  <tr>
+    <div class="field">
+  <tr>
+    <td><%= f.label :password_confirmation, "パスワード再確認" %></td>
+  </tr>
+  <tr>
+    <td><%= f.password_field :password_confirmation, autocomplete: "off", class: "regist-box" %></td>
+  </tr>
+    </div>
+  </tr>
+  </tbody>
+</table>
+  <div class="login-box">
+    <div class="actions">
+      <%= f.submit "登録する", :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+
+  </div>
+</div>
+
+<%= render "users/shared/links" %>

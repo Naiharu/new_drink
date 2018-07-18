@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+	@import "bootstrap-sprockets";
+    @import "bootstrap";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ul{
+  margin-bottom:0;
+}
+.field{
+  font-size: 15px;
+  margin-top: 10px;
+}
+.body-content{
+  width:1000px;
+  margin: 50px auto;
+  line-height:1.65;
+}
+.body-box{
+  width: 500px;
+  margin:0 auto;
+}
+.regist-box{
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: #9EBCC6;
+}
+/*-------------*/
+header{
+	width: 100%;
+	height: 100px;
+}
+.header-top{
+  height:100px;
+  background-color:#AEFFBD;
+}
+.header-content{
+  width:1500px;
+  margin:0 auto;
+}
+.nav-list{
+  list-style-type: none;
+  line-height:100px;
+  font-size:18px;
+}
+.nav-list-item{
+  float:left;
+  margin:0 10px;
+}
+.header-top-list{
+  float:right;
+}
+.logo{
+  display:block;
+  float:left;
+  background-image: url(test.png);
+  background-size:cover;
+  width: 140px;
+  height:80px;
+  margin: 10px auto;
+}
+/*--------------------*/
+footer{
+	width: 100%;
+	height: 100px;
+	background-color:#AEFFBD;
+	line-height: 100px;
+}
+.footer-content{
+	width:1500px;
+	margin:0 auto;
+}
+.footer-logo{
+	float:left;
+}
+.footer-text{
+	float:right;
+  font-size:18px;
+}
+/*---------------------*/
+/*top*/
+body{
+  text-align:center;
+}
+table{
+  margin:0 auto;
+}
+td{
+  padding:0 20px;
+}
+/*レビュー書き込み*/
+.review-item{
+  background-color:yellow;
+  height:90px;
+  line-height:30px;
+}
+.review-kuchikomi{
+  background-color:red;
+  height:150px;
+  line-height:150px;
+}
+.review-sub{
+  background-color:blue;
+  height:50px;
+  line-height:50px;
+}
+/*商品一覧画面*/
+.hot-kensaku{
+  background-color:yellow;
+  height:80px;
+  line-height:40px;
+}
+.hot{
+  height:40px;
+}
+.kensaku{
+  background-color:red;
+  height:40px;
+  line-height:40px;
+}
+.field-sub{
+  background-color:red;
+}
+.item-search{
+  margin: 50px auto;
+}
+.user-show-r{
+  font-size:15px;
+}

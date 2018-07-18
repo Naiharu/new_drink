@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_image_id: MyText
+  title: MyString
+  category: 1
+  maker: 1
+  price: 1
+  calorie: MyString
+  comment: MyText
+  age: MyString
+  created_at: 2018-07-06 04:50:50
+  updated_at: 2018-07-06 04:50:50
+
+two:
+  item_image_id: MyText
+  title: MyString
+  category: 1
+  maker: 1
+  price: 1
+  calorie: MyString
+  comment: MyText
+  age: MyString
+  created_at: 2018-07-06 04:50:50
+  updated_at: 2018-07-06 04:50:50
