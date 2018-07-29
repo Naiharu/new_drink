@@ -3,17 +3,17 @@
     <div class="row main-top">
       <div class="col-sm-6">
         <div>
-          <%= attachment_image_tag @item, :item_image, :fill, 400, 400, fallback: "test.png", size: '400x400' %>
+          <%= attachment_image_tag @item, :item_image, :fill, 400, 400, fallback: "drink.png", size: '400x400' %>
         </div>
       </div>
       <div class="col-sm-6 item-box-show">
         <tr>
-            <td><b><%=@item.title%></b></td>
+            <td class="breakall"><b><%=@item.title%></b></td>
           </tr>
        <table>
          <tbody>
           <tr>
-            <td>美味しさ</td>
+            <td>味</td>
             <td>
            <div class="star-rating">
                 <% if @average == nil %>
@@ -44,7 +44,7 @@
             </td>
           </tr>
           <tr>
-            <td>コスパ</td>
+            <td>香り</td>
             <td>
            <div class="star-rating">
                     <%# 黄色い★ 0.5きざみ %>
@@ -76,7 +76,7 @@
             </td>
           </tr>
           <tr>
-            <td>入手難度</td>
+            <td>値段</td>
             <td>
            <div class="star-rating">
                     <%# 黄色い★ 0.5きざみ %>
@@ -140,7 +140,7 @@
             </td>
           </tr>
            <tr>
-            <td>評価</td>
+            <td>満足度</td>
             <td>
            <div class="star-rating-top">
                     <%# 黄色い★ 0.5きざみ %>
@@ -171,9 +171,14 @@
             </div>
             </td>
           </tr>
+          <tr>
+          <td><span id="iine-of-<%= @item.id %>">
+              <%= render partial: 'iines/iine', locals: { item: @item, iines: @iines } %>
+          </span></td>
+          <td><%= link_to "レビュー投稿を行う!",new_item_review_path(@item), class:"btn btn-success btn-lg"%></td>
+          </tr>
              </tbody>
         </table><br>
-        <%= link_to "レビュー投稿を行う!",new_item_review_path(@item), class:"btn btn-success btn-lg"%>
         <div>
          <% if admin_signed_in? %>
                 <tr>
@@ -184,7 +189,7 @@
        </div>
      </div>
     </div><br>
-    <h2 class="h2">商品詳細</h2>
+    <h2 class="h2">飲み物詳細</h2><br>
     <div class="row main-bottom">
       <div class="col-sm-6 left-box">
         <table class="table table-striped table-bordered">
@@ -194,7 +199,7 @@
               <td><%= @item.maker.maker_name %></td>
             </tr>
             <tr>
-              <td>商品カテゴリ</td>
+              <td>飲み物カテゴリ</td>
               <td><%= @item.category.category_name %></td>
             </tr>
             <tr>
@@ -209,6 +214,10 @@
               <td>カロリー</td>
               <td><%= @item.calorie %>cal</td>
             </tr>
+            <tr>
+              <td>URL</td>
+              <td><%=link_to "この飲み物をAmazonで見る",@item.url{:href},{:target => "_blank"}%></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -216,16 +225,16 @@
         <table class="table table-striped table-bordered">
           <tbody>
             <tr>
-              <td>商品説明</td>
+              <td>飲み物説明</td>
             </tr>
             <tr>
-              <td><%= simple_format(h(@item.comment)) %></td>
+              <td class="breakall"><%= simple_format(h(@item.comment)) %></td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
-    <h2 class="h2">商品レビュー(最新３件)</h2>
+    </div> 
+    <h2 class="h2">飲み物レビュー(最新３件)</h2><br>
      <div class="review-index">
       <% @reviews.each do |review| %>
       <table>
@@ -265,6 +274,6 @@
       <p class="review-review"><%= review.item_review %></p>
       <% end %>
     </div>
-     <h3><%=link_to "この商品のレビューを全て見る",item_reviews_path(@item) %></h3>
+     <h3><%=link_to "この飲み物のレビューを全て見る",item_reviews_path(@item) %></h3>
   </div>
 </div>

@@ -3,7 +3,7 @@
     <div class="row main-content">
     <h2 class="h2">レビュー一覧</h2>
       <h3><%= @item.title%></h3>
-      <p><%= attachment_image_tag @item, :item_image, :fill, 208, 208, fallback: "test.png", size: '208x208' %></p>
+      <p><%= attachment_image_tag @item, :item_image, :fill, 208, 208, fallback: "drink.png", size: '208x208' %></p>
       <div class="review-index">
       <% @reviews.each do |review| %>
     	<table>

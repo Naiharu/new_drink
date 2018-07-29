@@ -27,6 +27,9 @@
   display: block;
   clear: both;
 }
+.table > tbody > tr > td{
+  border-top:none;
+}
 ul{
   margin-bottom:0;
 }
@@ -35,7 +38,7 @@ ul{
   margin-top: 10px;
 }
 .body-content{
-  width:1000px;
+  width:1600px;
   margin: 50px auto;
   line-height:1.65;
 }
@@ -49,6 +52,10 @@ ul{
   border-radius: 5px;
   border: solid 1px;
   border-color: #9EBCC6;
+}
+.gazou{
+  text-align:center;
+  display:inline-block;
 }
 /*-------------*/
 header{
@@ -78,11 +85,14 @@ header{
 .logo{
   display:block;
   float:left;
-  background-image: url(test.png);
+  background-image: url(drink.png);
   background-size:cover;
-  width: 140px;
-  height:80px;
+  width: 70px;
+  height:70px;
   margin: 10px auto;
+}
+.breakall{
+  word-break : break-all;
 }
 /*--------------------*/
 footer{
@@ -94,13 +104,10 @@ footer{
 .footer-content{
 	width:1500px;
 	margin:0 auto;
+  font-size:18px;
 }
 .footer-logo{
 	float:left;
-}
-.footer-text{
-	float:right;
-  font-size:18px;
 }
 /*---------------------*/
 /*top*/

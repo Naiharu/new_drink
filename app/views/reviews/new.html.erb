@@ -6,17 +6,17 @@
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <div class="col-md-6 col-md-offset-3">
         <h3><%= @item.title%></h3>
-        <p><%= attachment_image_tag @item, :item_image, :fill, 208, 208, fallback: "noimage.png", size: '208x208' %></p>
+        <p><%= attachment_image_tag @item, :item_image, :fill, 208, 208, fallback: "drink.png", size: '208x208' %></p>
           <div class="field" id="star">
-            <%= f.label :star,"美味しさ" %>
+            <%= f.label :star,"味" %>
             <%= f.hidden_field :star, id: :review_star %>
           </div>
           <div class="field" id="star2">
-            <%= f.label :star2,"コスパ" %>
+            <%= f.label :star2,"香り" %>
             <%= f.hidden_field :star2, id: :review_star2 %>
           </div>
           <div class="field" id="star3">
-            <%= f.label :star3,"入手難度" %>
+            <%= f.label :star3,"値段" %>
             <%= f.hidden_field :star3, id: :review_star3 %>
           </div>
            <div class="field" id="star4">
@@ -24,7 +24,7 @@
             <%= f.hidden_field :star4, id: :review_star4 %>
           </div>
            <div class="field" id="star5">
-            <%= f.label :star5,"評価" %>
+            <%= f.label :star5,"満足度" %>
             <%= f.hidden_field :star5, id: :review_star5 %>
           </div>
 
@@ -76,7 +76,7 @@ $('#star4').raty({
 $('#star5').raty({
   size     : 90,
   starOff:  '<%= asset_path('star-off.png') %>',
-  starOn : '<%= asset_path('star-on.png') %>',
+  starOn : '<%= asset_path('star.png') %>',
   scoreName: 'review[star5]' 
 });
 </script>

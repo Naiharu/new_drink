@@ -4,33 +4,35 @@
       <div class="main-content">
         <h2 class="h2">ようこそNewDrinkへ!!</h2><br>
         <h3 class="h3">このサイトで新商品(飲み物)の感想や評価を共有しよう!!</h3><br>
-        <div class="top-text">新商品TOP5</div>
+        <div class="top-text">新発売TOP5</div>
         	<% @items.each do |item| %>
         	<table class="item-top-new">
         	<tbody>
         	<tr >
-        		<td class="col-sm-1"><%= link_to (item_path(item.id)) do %>
-             	<%= attachment_image_tag item, :item_image, :fill, 130, 130, fallback: "noimage.png", size: '130x130' %></td>
+        		<td class="col-sm-1 breakall"><%= link_to (item_path(item.id)) do %>
+             	<%= attachment_image_tag item, :item_image, :fill, 100, 100, fallback: "drink.png", size: '100x100' %><br>
+                  <%=item.title%>
+                </td>
              	<% end %>
-             	<td class="col-sm-2"><b>『<%=item.title%>』</b></td>
-              	<td class="col-sm-1"><%= item.age %>日発売</td>
-              	<td class="col-sm-2"><%= item.comment %></td>
+              	<td class="col-sm-1 breakall"><%= item.age %>日発売</td>
+              	<td class="col-sm-4 breakall"><%= item.comment %></td>
              </tr>
             <% end %>
          	</tbody>
      		</table>
      	</div>
-     		<div class="top-text">新規レビューTOP5</div>
+     		<div class="top-text">新着レビューTOP5</div>
      		<% @reviews.each do |review| %>
      		<table class="item-top-new">
         	<tbody>
         	<tr>
-        	 	<td class="col-sm-1"><%= link_to (item_path(review.item.id)) do %>
-             	<%= attachment_image_tag review.item, :item_image, :fill, 130, 130, fallback: "noimage.png", size: '130x130' %></td>
+        	 	<td class="col-sm-1 breakall"><%= link_to (item_path(review.item.id)) do %>
+             	<%= attachment_image_tag review.item, :item_image, :fill, 100, 100, fallback: "drink.png", size: '100x100' %><br>
+                  <%=review.item.title%>
+                </td>
              	<% end %>
-             	<td class="col-sm-2"><b>『<%=review.item.title%>』</b></td>
-             	<td class="col-sm-1"><b><%=review.user.name%></b></td>
-             	<td class="col-sm-2"><b><%=review.item_review%></b></td>
+             	<td class="col-sm-1 breakall"><%=link_to review.user.name, user_path(review.user.id) %></td>
+             	<td class="col-sm-4 breakall"><%=review.item_review%></td>
             </tr>
              	<% end %>
             </tbody>
@@ -41,12 +43,13 @@
             <table class="item-top-new">
             <tbody>
             <tr>
-                <td class="col-sm-1"><%= link_to (item_path(iine.id)) do %>
-                <%= attachment_image_tag iine, :item_image, :fill, 130, 130, fallback: "noimage.png", size: '130x130' %></td>
+                <td class="col-sm-1 breakall"><%= link_to (item_path(iine.id)) do %>
+                <%= attachment_image_tag iine, :item_image, :fill, 100, 100, fallback: "drink.png", size: '100x100' %><br>
+                    <%=iine.title%>
+                </td>
                 <% end %>
-                <td class="col-sm-2"><b>『<%=iine.title%>』</b></td>
-                <td class="col-sm-1"><%= iine.age %>日発売</td>
-                <td class="col-sm-2"><%= iine.iines_count %>件</td>
+                <td class="col-sm-1 breakall">イイネ数<%= iine.iines.count %>件</td>
+                <td class="col-sm-4 breakall"><%= iine.comment %></td>
             </tr>
                 <% end %>
             </tbody>

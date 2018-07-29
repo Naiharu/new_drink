@@ -61,9 +61,15 @@ class ItemsController < ApplicationController
 		@iines = Item.limit(5).order("iines_count DESC")
 	end
 
+	def destroy
+	@item = Item.find(params[:id])
+	@item.destroy
+	redirect_to items_path
+	end
+
 	private
 	def item_params
-    	params.require(:item).permit(:admin_id,:item_image,:title,:category_id,:maker_id,:price,:calorie,:comment,:age,:iines_count)
+    	params.require(:item).permit(:admin_id,:item_image,:title,:url,:category_id,:maker_id,:price,:calorie,:comment,:age,:iines_count)
 	end
 
 end

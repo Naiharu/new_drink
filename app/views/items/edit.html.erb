@@ -4,12 +4,10 @@
     <div class="row">
     	<%= form_for(@item) do |f| %>
            	<%= f.hidden_field :admin_id, :value => @admin %>
-
 			<div class="item-form-box">
-
-			<div class="field">
-				<%= f.label :item_image_id, "イメージ" %>
-				<%= f.attachment_field :item_image, placeholder: "画像のアップロード" %>
+			<%= f.label :item_image, "飲み物画像" %><br>
+			<div class="gazou">
+			<%= f.attachment_field :item_image, placeholder: "画像のアップロード" %>
 			</div>
 			<div class="field">
 			<%= f.label :title, "商品名" %>

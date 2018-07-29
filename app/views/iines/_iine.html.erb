@@ -1,21 +1,17 @@
 <% if current_user && item.iine_user(current_user.id) %>
   <%= link_to item_iine_path(item.iine_user(current_user.id), item_id: item.id), method: :delete, id: "iine-buttons", remote: true do %>
-    <div class="ui labeled button" tabindex="0">
         <i class="heart icon"></i>
-         <%= button_tag(class: "btn btn-default btn-xs") do %>
+         <%= button_tag(class: "btn btn-default") do %>
           <%= content_tag :span,"いいねを外す", class: "glyphicon glyphicon-heart" %><br>
           <% end %>
-      </div>
   <% end %>
   <div class="iine">イイネ総数　<%= item.iines.count %></div>
 <% else %>
   <%= link_to item_iines_path(item), method: :post, id: "iine-buttons", remote: true do %>
-    <div class="ui labeled button" tabindex="0">
         <i class="heart icon"></i>
-         <%= button_tag(class: "btn btn-default btn-xs") do %>
+         <%= button_tag(class: "btn btn-default") do %>
           <%= content_tag :span,"いいねをする!", class: "glyphicon glyphicon-heart-empty" %>
            <% end %>
-      </div>
       </a>
     </div>
   <% end %>

@@ -7,8 +7,8 @@
 			<div class="item-review-box">
 				<table>
 				<tr>
-  				<td class="col-sm-2"><%= user.name %></td>
-  				<td class="col-sm-2"><%= attachment_image_tag user, :user_image, :fill, 50, 50, fallback: "test.png", size: '50x50' %></td></td>
+  				<td class="col-sm-2 breakall"><%= user.name %></td>
+  				<td class="col-sm-2 breakall"><%= user.favorite %>好きです!</td>
   				<td class="col-sm-2"><b><%= link_to 'このユーザーを見に行く', user_path(user) %><b></td>
 				</tr>
 				</table>
@@ -16,5 +16,6 @@
 			</div>
 			</div>
 		</div>
-	</div>
+	  </div>
+  </div>
 </div>

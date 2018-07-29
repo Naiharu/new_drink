@@ -5,6 +5,8 @@
       <h3 class="h3">会員情報</h3>
 
       <%= form_for(@user) do |f| %>
+      <%= f.label :user_image, "ユーザー画像" %><br>
+      <div class="gazou"><%= f.attachment_field :user_image, placeholder: "画像のアップロード" %></div>
       <table class="table">
     	<tbody>
     	<div class="field">
@@ -23,6 +25,14 @@
     		<td><%= f.number_field :age, autofocus: true, autocomplete: "age", class: "regist-box" %></td>
   		</tr>
     	</div>
+      <div class="field">
+      <tr>
+      <td><%= f.label :favorite, "好きな飲み物" %></td>
+      </tr>
+      <tr>
+      <td><%= f.text_field :favorite, autofocus: true, autocomplete: "favorite", class: "regist-box" %></td>
+      </tr>
+      </div>
     	<div class="field">
   		<tr>
     		<td><%= f.label :sex, "性別" %></td>
@@ -33,14 +43,6 @@
       		<label><%= f.radio_button :sex, :woman %> 女性</label>
     	</td>
   		</tr>
-      </div>
-      <div class="field">
-      <tr>
-          <td><%= f.label :email, "メールアドレス" %></td>
-      </tr>
-      <tr>
-          <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "regist-box" %></td>
-      </tr>
       </div>
       </tbody>
     </table>

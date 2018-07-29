@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create]
 	def index
 		@item = Item.find(params[:item_id])
 		@reviews = Review.where(item_id: @item.id).order("id DESC")
@@ -21,7 +22,6 @@ class ReviewsController < ApplicationController
 		@review.save
 		redirect_to root_path
 	end
-
 	private
 		def review_params
     	params.require(:review).permit(:user_id,:item_id,:star,:star2,:star3,:star4,:star5,:item_review,:review_star,:review_star2,:review_star3,:review_star4,:review_star5)

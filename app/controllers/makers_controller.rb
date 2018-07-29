@@ -1,4 +1,5 @@
 class MakersController < ApplicationController
+	before_action :authenticate_user!, except: [:index, :new, :create, :edit, :update]
 	def index
 		if admin_signed_in?
 		@makers = Maker.all

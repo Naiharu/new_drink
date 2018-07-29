@@ -11,14 +11,15 @@ devise_for :users, controllers: {
 }
 
 root 'items#top'
+get '/user_password_edit/:id' => "users#user_password_edit", as:'user_password_edit'
 
 resources :categories, only: [:index, :edit, :new, :create, :update]
-resources :items, only: [:index, :show, :new, :create, :edit, :update] do
+resources :items, only: [:index, :show, :new, :create, :edit, :update,:destroy] do
 	resources :reviews, only: [:create, :new,:index]
   resources :iines, only: [:create, :destroy]
 end
 resources :makers, only: [:index, :edit, :new, :create, :update]
-resources :users, only: [:show, :edit, :update] do
+resources :users, only: [:show, :edit, :update,:destroy] do
   member do
      get :following, :followers
     end

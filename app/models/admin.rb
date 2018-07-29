@@ -5,4 +5,6 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :items
+         validates :name, presence: true
+		 validates :email, presence: true
 end

@@ -1,14 +1,13 @@
 <div class="body-content">
   <div class="container-fluid main-content">
-    <h2 class="h2">マイページ</h2>
       <div class="row">
         <div class="col-sm-4">
           <h3 class="h3">ユーザー情報</h3>
-          <%= attachment_image_tag @user, :user_image, :fill, 300, 300, fallback: "test.png", size: '300x300' %>
+          <%= attachment_image_tag @user, :user_image, :fill, 130, 130, fallback: "human.png", size: '130x130' %>
           <table class="table">
             <tbody>
               <tr>
-                <td>お名前</td>
+                <td class="breakall">ニックネーム</td>
                 <td><%= @user.name %></td>
               </tr>
               <tr>
@@ -19,9 +18,9 @@
                 <td>性別</td>
                 <td><%= @user.sex_i18n %></td>
               </tr>
-              <tr>
-                <td>メールアドレス</td>
-                <td><%= @user.email %></td>
+               <tr>
+                <td class="breakall">好きな飲み物</td>
+                <td><%= @user.favorite %></td>
               </tr>
             </tbody>
           </table>
@@ -30,11 +29,13 @@
           <% if @user.id == current_user.id %>
           <div class="button-area clearfix">
             <%= link_to "編集する", edit_user_path(@user), class: "btn btn-info btn-lg user-button" %>
+            <%= link_to "退会する", user_path(@user), method: :delete, data: { confirm: '本当に退会しますか？' }, class: "btn btn-danger btn-lg user-button" %>
           </div>
+           <%= link_to "パスワードを変更する", user_password_edit_path(@user) %>
           <% end %>
         </div>
           <div class="col-sm-8">
-          <h3 class="h3">過去のレビュー(3件)</h3>
+          <h3 class="h3">過去のレビュー(5件)</h3>
           <div class="review-index">
       <% @reviews.each do |review| %>
       <table>
@@ -43,7 +44,7 @@
             <td><%=link_to review.item.title, item_path(review.item.id) %></td>
           </tr>
           <tr>
-            <td><%= attachment_image_tag review.item, :item_image, :fill, 80, 80, fallback: "test.png", size: '80x80' %></td>
+            <td><%= attachment_image_tag review.item, :item_image, :fill, 80, 80, fallback: "drink.png", size: '80x80' %></td>
           </tr>
           <tr>
             <td>

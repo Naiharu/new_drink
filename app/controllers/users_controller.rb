@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :authenticate_user!, only: [:edit, :show, :update]
 	def edit
 		if User.exists?(id: params[:id])
 			if user_signed_in?
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
 		if User.exists?(id: params[:id])
 			if user_signed_in?
 				@user = User.find(params[:id])
-				@reviews = Review.where(user_id: @user.id).limit(3).order("id DESC")
+				@reviews = Review.where(user_id: @user.id).limit(5).order("id DESC")
 			else
 				redirect_to root_path
 			end
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 		if user_signed_in?
 			@user = User.find(params[:id])
 	     	if @user.update(user_params)
-	        	redirect_to user_path(@user.id), notice: "更新できました。"
+	        	redirect_to user_path(@user.id)
 	    	else
 	      		render :edit
 	    	end
@@ -47,9 +48,22 @@ class UsersController < ApplicationController
     render 'show_follower'
   	end
   	
+
+  	def destroy
+	@user = User.find(params[:id])
+	@user.destroy
+	redirect_to root_path
+	end
+
+  	def user_password_edit
+  		if User.exists?(id: params[:id])
+		@user = User.find(params[:id])
+		end
+	end
+
 	private
 		def user_params
-    	params.require(:user).permit(:name,:age,:email,:user_image,:sex,:password)
+    	params.require(:user).permit(:name,:age,:email,:favorite,:user_image,:sex,:password)
 	end
 
 end

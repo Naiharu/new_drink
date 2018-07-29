@@ -12,29 +12,31 @@
   <div class="container-fluid">
     <div class="row">
       <div class="main-content">
-        <h2 class="h2">商品一覧</h2><br>
+        <h2 class="h2">飲み物一覧</h2>
+        <h3 clas="h3">いいねをするにはログインしてください</h3>
         <div class="main-box2 clearfix">
           <div class="flex">
             <% @items.each do |item| %>
                 <div class="item-box-index">
                  <%= link_to (item_path(item.id)) do %>
-                  <%= attachment_image_tag item, :item_image, :fill, 208, 208, fallback: "noimage.png", size: '208x208' %>
+                  <%= attachment_image_tag item, :item_image, :fill, 208, 208, fallback: "drink.png", size: '208x208' %>
                   <% end %>
                   <div class="nakami-box">
                   <table>
                     <tbody class="nakami">
                       <tr>
-                        <td><b>『<%=item.title%>』</b></td>
+                        <td class="naka"><b>『<%=item.title%>』</b></td>
                       </tr>
                       <tr>
-                        <td><%= item.maker.maker_name%></td>
+                        <td class="naka"><%= item.maker.maker_name%></td>
                       </tr>
                       <tr>
-                        <td><%= item.age %>日発売</td>
+                        <td class="naka"><%= item.age %>日発売</td>
                       </tr>
                       <% if admin_signed_in? %>
                       <tr>
-                        <td><%= link_to "編集",edit_item_path(item), class:"btn btn-default btn-xs"%></td>
+                        <td><%= link_to "編集",edit_item_path(item)%>
+                        <%= link_to "削除", item_path(item.id), method: :delete,data: { confirm: '削除してよろしいですか？' } %></td>
                       </tr>
                       <% end %>
                        <td><span id="iine-of-<%= item.id %>">
