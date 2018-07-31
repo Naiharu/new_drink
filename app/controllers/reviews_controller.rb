@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
 		@review.item_id = params[:item_id]
 		# binding.pry
 		@review.save
-		redirect_to root_path
+		redirect_to item_path(@item.id)
 	end
 	private
 		def review_params

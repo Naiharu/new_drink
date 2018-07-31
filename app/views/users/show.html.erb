@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-sm-4">
           <h3 class="h3">ユーザー情報</h3>
-          <%= attachment_image_tag @user, :user_image, :fill, 130, 130, fallback: "human.png", size: '130x130' %>
+          <%= attachment_image_tag @user, :user_image, :fill, 150, 150, fallback: "human.png", size: '150x150' %>
           <table class="table">
             <tbody>
               <tr>
@@ -16,7 +16,10 @@
               </tr>
               <tr>
                 <td>性別</td>
-                <td><%= @user.sex_i18n %></td>
+                <td><% if @user.sex == "man" %>男性
+                    <% else @user.sex == "woman" %>女性
+                    <% end %>
+                </td>
               </tr>
                <tr>
                 <td class="breakall">好きな飲み物</td>
@@ -44,8 +47,12 @@
             <td><%=link_to review.item.title, item_path(review.item.id) %></td>
           </tr>
           <tr>
-            <td><%= attachment_image_tag review.item, :item_image, :fill, 80, 80, fallback: "drink.png", size: '80x80' %></td>
+            <td><%= attachment_image_tag review.item, :item_image, :fill, 100, 100, fallback: "drink.png", size: '100x100' %></td>
           </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
           <tr>
             <td>
            <div class="star-rating-show">
@@ -75,10 +82,11 @@
           </tr>
         </tbody>
       </table>
+
       <p class="review-review"><%= review.item_review %></p>
       <% end %>
     </div>
-          </div>
+    </div>
     </div>
 </div>
 </div>

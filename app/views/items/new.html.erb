@@ -27,12 +27,8 @@
 			<%= f.collection_select(:category_id, Category.all, :id, :category_name) %><br>
 			</div>
 			<div class="field">
-			<%= f.label :price, "参考価格" %><br>
+			<%= f.label :price, "参考価格(1本あたり)" %><br>
 			<%= f.number_field :price, class: "item-form" %><br>
-			</div>
-			<div class="field">
-			<%= f.label :calorie, "カロリー" %><br>
-			<%= f.number_field :calorie, class: "item-form" %><br>
 			</div>
 			<div class="field">
 			<%= f.label :url, "商品URL(amazon)" %><br>

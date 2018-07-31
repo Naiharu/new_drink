@@ -6,10 +6,10 @@
     <tbody>
   <div class="field">
     <tr>
-      <td><%= f.label :email, "メールアドレス" %></td>
+      <td><%= f.label :name, "名前" %></td>
     </tr>
     <tr>
-      <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "regist-box" %></td>
+      <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "regist-box" %></td>
     </tr>
   </div>
 

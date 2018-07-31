@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
 		@item = Item.new(item_params)
 		# binding.pry
 		@item.save
-		redirect_to root_path
+		redirect_to items_path
 	end
 
 	def edit
@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
 
 	private
 	def item_params
-    	params.require(:item).permit(:admin_id,:item_image,:title,:url,:category_id,:maker_id,:price,:calorie,:comment,:age,:iines_count)
+    	params.require(:item).permit(:admin_id,:item_image,:title,:url,:category_id,:maker_id,:price,:comment,:age,:iines_count)
 	end
 
 end

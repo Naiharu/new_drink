@@ -10,7 +10,6 @@ class Item < ApplicationRecord
 
 	validates :title, presence: true
 	validates :price, presence: true, numericality: { only_integer: true }
-	validates :calorie, presence: true, numericality: { only_integer: true }
 	validates :comment, presence: true
 	validates :age, presence: true
 

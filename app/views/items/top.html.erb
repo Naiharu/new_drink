@@ -31,7 +31,7 @@
                   <%=review.item.title%>
                 </td>
              	<% end %>
-             	<td class="col-sm-1 breakall"><%=link_to review.user.name, user_path(review.user.id) %></td>
+             	<td class="col-sm-1 breakall"><%=review.created_at.strftime('%Y/%m/%d')  %>日投稿</td>
              	<td class="col-sm-4 breakall"><%=review.item_review%></td>
             </tr>
              	<% end %>
