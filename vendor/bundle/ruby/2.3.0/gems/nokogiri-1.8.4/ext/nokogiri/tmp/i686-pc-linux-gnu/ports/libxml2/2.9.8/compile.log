@@ -1,0 +1,11 @@
+CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/bash /vagrant/new_drink/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.4/ext/nokogiri/tmp/i686-pc-linux-gnu/ports/libxml2/2.9.8/libxml2-2.9.8/missing autoconf
+/vagrant/new_drink/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.4/ext/nokogiri/tmp/i686-pc-linux-gnu/ports/libxml2/2.9.8/libxml2-2.9.8/missing: line 81: autoconf: command not found
+WARNING: 'autoconf' is missing on your system.
+         You should only need it if you modified 'configure.ac',
+         or m4 files included by it.
+         The 'autoconf' program is part of the GNU Autoconf package:
+         <http://www.gnu.org/software/autoconf/>
+         It also requires GNU m4 and Perl in order to run:
+         <http://www.gnu.org/software/m4/>
+         <http://www.perl.org/>
+make: *** [configure] Error 127
