@@ -38,12 +38,12 @@ ul{
   margin-top: 10px;
 }
 .body-content{
-  width:1600px;
+  width:1040px;
   margin: 50px auto;
   line-height:1.65;
 }
 .body-box{
-  width: 500px;
+  width: 520px;
   margin:0 auto;
 }
 .regist-box{
@@ -58,16 +58,12 @@ ul{
   display:inline-block;
 }
 /*-------------*/
-header{
-	width: 100%;
-	height: 100px;
-}
 .header-top{
   height:100px;
   background-color:#AEFFBD;
 }
 .header-content{
-  width:1500px;
+  width:1040px;
   margin:0 auto;
 }
 .nav-list{
@@ -91,23 +87,25 @@ header{
   height:70px;
   margin: 10px auto;
 }
+.logoname{
+  display:block;
+  float:left;
+  width: 70px;
+  height:30px;
+  margin: 10px auto;
+}
 .breakall{
   word-break : break-all;
 }
 /*--------------------*/
 footer{
-	width: 100%;
-	height: 100px;
 	background-color:#AEFFBD;
 	line-height: 100px;
 }
 .footer-content{
-	width:1500px;
+	width:1040px;
 	margin:0 auto;
   font-size:18px;
-}
-.footer-logo{
-	float:left;
 }
 /*---------------------*/
 /*top*/
