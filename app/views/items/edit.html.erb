@@ -1,37 +1,38 @@
 <div class="body-content">
   <div class="container-fluid main-content">
-    <h2 class="h2">商品の編集</h2>
+    <h2 class="h2">飲み物の編集</h2>
     <div class="row">
     	<%= form_for(@item) do |f| %>
            	<%= f.hidden_field :admin_id, :value => @admin %>
+
 			<div class="item-form-box">
 			<%= f.label :item_image, "飲み物画像" %><br>
 			<div class="gazou">
 			<%= f.attachment_field :item_image, placeholder: "画像のアップロード" %>
 			</div>
 			<div class="field">
-			<%= f.label :title, "商品名" %>
-			<%= f.text_field :title, class: "item-form" %>
+			<%= f.label :title, "飲み物名" %><br>
+			<%= f.text_field :title, class: "item-form" %><br>
 			</div>
 			<div class="field">
-			<%= f.label :age, "発売日" %>
-			<%= f.text_field :age, class: "item-form" %>
+			<%= f.label :age, "発売日" %><br>
+			<%= f.text_field :age, class: "item-form" %><br>
 			</div>
 			<div class="field">
-			<%= f.label :maker_id, "メーカー" %>
-			<%= f.collection_select(:maker_id, Maker.all, :id, :maker_name) %>
+			<%= f.label :maker_id, "メーカー" %><br>
+			<%= f.collection_select(:maker_id, Maker.all, :id, :maker_name) %><br>
 			</div>
 			<div class="field">
-			<%= f.label :category_id, "カテゴリ" %>
-			<%= f.collection_select(:category_id, Category.all, :id, :category_name) %>
+			<%= f.label :category_id, "カテゴリ" %><br>
+			<%= f.collection_select(:category_id, Category.all, :id, :category_name) %><br>
 			</div>
 			<div class="field">
-			<%= f.label :price, "参考価格" %>
-			<%= f.number_field :price, class: "item-form" %>
+			<%= f.label :price, "参考価格(1本あたり)" %><br>
+			<%= f.number_field :price, class: "item-form" %><br>
 			</div>
 			<div class="field">
-			<%= f.label :comment, "商品説明" %>
-			<%= f.text_area :comment, class: "item-form" %>
+			<%= f.label :comment, "飲み物の説明" %><br>
+			<%= f.text_area :comment, class: "item-form" %><br>
 			</div>
  			<div class="button-area item-button">
           	<%= f.submit "　完 了　", class: "btn btn-lg btn-info" %>

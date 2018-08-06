@@ -1,6 +1,6 @@
 <div class="body-content">
   <div class="container-fluid main-content">
-    <h2 class="h2">商品の新規追加</h2>
+    <h2 class="h2">飲み物の新規追加</h2>
     <div class="row">
     	<%= form_for(@item) do |f| %>
            	<%= f.hidden_field :admin_id, :value => @admin %>
@@ -31,11 +31,7 @@
 			<%= f.number_field :price, class: "item-form" %><br>
 			</div>
 			<div class="field">
-			<%= f.label :url, "商品URL(amazon)" %><br>
-			<%= f.text_field :url, class: "item-form" %><br>
-			</div>
-			<div class="field">
-			<%= f.label :comment, "説明" %><br>
+			<%= f.label :comment, "飲み物の説明" %><br>
 			<%= f.text_area :comment, class: "item-form" %><br>
 			</div>
  			<div class="button-area item-button">
